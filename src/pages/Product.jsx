@@ -63,8 +63,9 @@ export const Product = () => {
   }
 
   return (
-    <div className="flex min-h-screen bg-gray-50 upper">
-      <div className="w-80 bg-white shadow-sm p-6">
+    <div className="upper">
+
+      <div className="w-80 bg-white shadow-sm p-6 actionbar">
         <div className="bg-white rounded-lg border p-4">
           <h3 className="text-lg font-semibold mb-4">Actions</h3>
 
@@ -105,9 +106,9 @@ export const Product = () => {
         </div>
       </div>
 
-      <div className="flex-1 p-6">
+      <div className="flex-1 p-6 element-box">
         <div className="mb-6">
-          <h2 className="text-2xl font-semibold">Products ({filteredProducts.length})</h2>
+          <h2 className="text-2xl font-semibold">Products ({filteredProducts.length})</h2> <hr />
         </div>
 
         <CardItem products={filteredProducts} onDelete={handleDelete} onEdit={handleEdit} />
@@ -117,7 +118,7 @@ export const Product = () => {
         <ProductForm
           onSubmit={handleAddProduct}
           onClose={() => setShowAddForm(false)}
-          categories={categories.slice(1)} // Remove "All Categories" option
+          categories={categories.slice(1)} 
         />
       )}
 
@@ -126,7 +127,7 @@ export const Product = () => {
           product={editingProduct}
           onSubmit={handleUpdateProduct}
           onClose={() => setEditingProduct(null)}
-          categories={categories.slice(1)} // Remove "All Categories" option
+          categories={categories.slice(1)} 
         />
       )}
     </div>

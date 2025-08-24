@@ -1,9 +1,35 @@
 @import "tailwindcss";
 .upper{
   background: linear-gradient(135deg, #585f8186 0%, #a179ca 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
 }
 .cardimg{
   height:250px;
   object-fit:contain;
   margin:auto;
+}
+.actionbar{
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  margin-right:20px;
+  background-color: white;
+  /* height: 100vh; */
+  margin-top: 15px;
+}
+.element-box{
+  margin-top: 15px;
+  border-radius:10px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  background-color: white;
+  margin-bottom:20px;
+}
+hr{
+  margin-top:10px;
+  border-top:1px solid #424346;
+  width:100%;
+  margin-bottom:20px;
 }
