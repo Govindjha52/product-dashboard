@@ -1,0 +1,9 @@
+@import "tailwindcss";
+.upper{
+  background: linear-gradient(135deg, #585f8186 0%, #a179ca 100%);
+}
+.cardimg{
+  height:250px;
+  object-fit:contain;
+  margin:auto;
+}
