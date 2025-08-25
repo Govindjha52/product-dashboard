@@ -1,4 +1,4 @@
-"use client"
+ import { ToastContainer, toast } from 'react-toastify';
 
 import { useEffect, useState } from "react"
 import axios from "axios"
@@ -45,21 +45,25 @@ export const Product = () => {
   // delete product by id
   const handleDelete = (id) => {
     setProducts(products.filter((p) => p.id !== id))
+    toast.success("Product deleted successfully!")
   }
 
   const handleEdit = (product) => {
     setEditingProduct(product)
+    toast.info("Editing product...")
   }
 
   const handleAddProduct = (newProduct) => {
     const productWithId = { ...newProduct, id: Date.now() }
     setProducts([productWithId, ...products])
     setShowAddForm(false)
+    toast.success("Product added successfully!")
   }
 
   const handleUpdateProduct = (updatedProduct) => {
     setProducts(products.map((p) => (p.id === updatedProduct.id ? updatedProduct : p)))
     setEditingProduct(null)
+    toast.success("Product updated successfully!")
   }
 
   return (
@@ -130,6 +134,7 @@ export const Product = () => {
           categories={categories.slice(1)} 
         />
       )}
+      <ToastContainer />
     </div>
   )
 }
